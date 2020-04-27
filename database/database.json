@@ -1,0 +1,70 @@
+{
+  "transactions": [
+    {
+      "date": "",
+      "category": "500+",
+      "amount": "-700",
+      "comment": "",
+      "id": 2
+    },
+    {
+      "date": "",
+      "category": "500+",
+      "amount": "-200",
+      "comment": "",
+      "id": 3
+    },
+    {
+      "date": "",
+      "category": "pensja",
+      "amount": "",
+      "comment": "",
+      "id": 4
+    },
+    {
+      "date": "",
+      "category": "pensja",
+      "amount": "122",
+      "comment": "",
+      "id": 5
+    }
+  ],
+  "earnings": [
+    {
+      "category": "pensja",
+      "budget": "-7000",
+      "actual": 0,
+      "variance": 0,
+      "id": "27b1a8f0-8594-11ea-a5c1-f5ae1160cdab"
+    },
+    {
+      "category": "500+",
+      "budget": "-1000",
+      "actual": 0,
+      "variance": 0,
+      "id": "4b923af0-8594-11ea-a5c1-f5ae1160cdab"
+    },
+    {
+      "category": "odsetki",
+      "budget": "100",
+      "actual": 0,
+      "variance": 0,
+      "id": "cbf9e490-88c8-11ea-96fd-93c1da5b0ae0"
+    },
+    {
+      "category": "dupa",
+      "budget": "100",
+      "actual": 0,
+      "variance": 0,
+      "id": "d89f59a0-88c8-11ea-96fd-93c1da5b0ae0"
+    },
+    {
+      "category": "dupa2",
+      "budget": "100",
+      "actual": 0,
+      "variance": 0,
+      "id": "dd4f4d20-88c8-11ea-96fd-93c1da5b0ae0"
+    }
+  ],
+  "expenses": []
+}
