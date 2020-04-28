@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import TransactionItem from "./TransactionItem";
 import { TransactionsContext } from "../contexts/TransactionsContext";
 import { BudgetContext } from "../contexts/BudgetContext";
@@ -11,6 +11,7 @@ const Transactions = () => {
     addTransaction,
     removeTransaction,
     updateTransaction,
+    evaluateActuals,
   } = useContext(TransactionsContext);
 
   // const updateTransaction = ({ id, date, category, amount, comment }) => {
@@ -38,10 +39,14 @@ const Transactions = () => {
   //     .catch((err) => console.warn(err));
   // };
 
-  const { categoryList } = useContext(BudgetContext);
-  console.log(categoryList);
+  const { categoryList, earnings, expenses } = useContext(BudgetContext);
+  console.log(transactions);
 
-  const [list, setCategoryList] = useState([categoryList]);
+  const list = [
+    ...earnings.map((category) => category.category),
+    ...expenses.map((category) => category.category),
+  ];
+
   return (
     <div>
       {/* <Link to="/">Budżet</Link> */}
@@ -55,6 +60,10 @@ const Transactions = () => {
             updateTransaction={updateTransaction}
             removeTransaction={removeTransaction}
             categoryList={categoryList}
+            evaluateActuals={evaluateActuals}
+            // categoryList={list}
+            // earnings={earnings}
+            // expenses={expenses}
           />
         ))
       ) : (

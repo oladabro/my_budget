@@ -1,7 +1,7 @@
 {
   "transactions": [
     {
-      "date": "",
+      "date": "2020-04-28",
       "category": "500+",
       "amount": "-700",
       "comment": "",
@@ -9,34 +9,41 @@
     },
     {
       "date": "",
-      "category": "500+",
-      "amount": "-200",
+      "category": "żywność",
+      "amount": "1000",
       "comment": "",
       "id": 3
     },
     {
       "date": "",
-      "category": "pensja",
-      "amount": "",
+      "category": "żywność",
+      "amount": "1000",
       "comment": "",
       "id": 4
     },
     {
       "date": "",
-      "category": "pensja",
-      "amount": "122",
+      "category": "żywność",
+      "amount": "100",
       "comment": "",
       "id": 5
+    },
+    {
+      "date": "",
+      "category": "żywność",
+      "amount": "100",
+      "comment": "",
+      "id": 6
+    },
+    {
+      "date": "",
+      "category": "żywność",
+      "amount": "100",
+      "comment": "",
+      "id": 7
     }
   ],
   "earnings": [
-    {
-      "category": "pensja",
-      "budget": "-7000",
-      "actual": 0,
-      "variance": 0,
-      "id": "27b1a8f0-8594-11ea-a5c1-f5ae1160cdab"
-    },
     {
       "category": "500+",
       "budget": "-1000",
@@ -45,26 +52,34 @@
       "id": "4b923af0-8594-11ea-a5c1-f5ae1160cdab"
     },
     {
-      "category": "odsetki",
-      "budget": "100",
+      "category": "pensja",
+      "budget": "-7000",
       "actual": 0,
       "variance": 0,
-      "id": "cbf9e490-88c8-11ea-96fd-93c1da5b0ae0"
+      "id": "11266270-8962-11ea-b9ea-59a4abaa3ab5"
     },
     {
       "category": "dupa",
-      "budget": "100",
+      "budget": "",
       "actual": 0,
       "variance": 0,
-      "id": "d89f59a0-88c8-11ea-96fd-93c1da5b0ae0"
-    },
-    {
-      "category": "dupa2",
-      "budget": "100",
-      "actual": 0,
-      "variance": 0,
-      "id": "dd4f4d20-88c8-11ea-96fd-93c1da5b0ae0"
+      "id": "b5323bf0-8962-11ea-ad74-19fa583b8ebc"
     }
   ],
-  "expenses": []
+  "expenses": [
+    {
+      "category": "przyjemności",
+      "budget": "100",
+      "actual": 0,
+      "variance": 0,
+      "id": "18e71860-8962-11ea-b9ea-59a4abaa3ab5"
+    },
+    {
+      "category": "żywność",
+      "budget": "200",
+      "actual": 0,
+      "variance": 0,
+      "id": "22fb65d0-8963-11ea-aae7-1b6842ea26f3"
+    }
+  ]
 }

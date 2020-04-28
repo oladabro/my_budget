@@ -1,6 +1,5 @@
 import React, { createContext, useState, useEffect } from "react";
 import uuid from "uuid/v1";
-import { render } from "@testing-library/react";
 
 export const BudgetContext = createContext();
 
@@ -36,16 +35,17 @@ const BudgetContextProvider = (props) => {
   }, []);
 
   const updateCategoryList = () => {
-    console.log(categoryList, earnings);
+    setCategoryList(
+      [
+        ...earnings.map((category) => category.category),
+        ...expenses.map((category) => category.category),
+      ].sort()
+    );
   };
 
   useEffect(() => {
-    console.log("zmienił się state", categoryList);
-    setCategoryList([
-      ...earnings.map((category) => category.category),
-      ...expenses.map((category) => category.category),
-    ]);
-  }, [earnings]);
+    updateCategoryList();
+  }, [earnings, expenses]);
 
   const addBudgetCategory = (event) => {
     const fetchOptions = {
@@ -87,14 +87,15 @@ const BudgetContextProvider = (props) => {
       fetch(`${DOMAIN}/earnings/${id}`, fetchOptions)
         .then(resolveResponse)
         .then(() => {
-          setEarnings(earnings.filter((category) => category.id != id));
+          const array = earnings.filter((category) => category.id !== id);
+          setEarnings([...array]);
         })
         .catch((err) => console.warn(err));
     } else if (expenses.find((category) => category.id === id)) {
       fetch(`${DOMAIN}/expenses/${id}`, fetchOptions)
         .then(resolveResponse)
         .then(() => {
-          setExpenses(expenses.filter((category) => category.id != id));
+          setExpenses(expenses.filter((category) => category.id !== id));
         })
         .catch((err) => console.warn(err));
     }
@@ -116,22 +117,23 @@ const BudgetContextProvider = (props) => {
     if (earnings.find((category) => category.id === id)) {
       fetch(`${DOMAIN}/earnings/${id}`, fetchOptions)
         .then(resolveResponse)
-        // .then((resp) => {
-        //   const index = earnings.length;
-        //   earnings[index] = resp;
-        //   console.log(earnings);
-
-        //   // console.log(earnings[index]);
-        //   setEarnings([...earnings]);
-        //   // setEarnings((prevState) => [...prevState]);
-        // })
+        .then((resp) => {
+          const array = [...earnings];
+          let index = array.find((el) => el.id === id);
+          index = resp;
+          setEarnings([...array]);
+          console.log(earnings, index, resp);
+        })
         .catch((err) => console.warn(err));
     } else if (expenses.find((category) => category.id === id)) {
       fetch(`${DOMAIN}/expenses/${id}`, fetchOptions)
         .then(resolveResponse)
-        .then(() => {
-          setExpenses((prevState) => [...prevState]);
-        })
+        // .then((resp) => {
+        //   const array = [...expenses];
+        //   let index = array.find((el) => el.id === id);
+        //   index = resp;
+        //   setExpenses([...array]);
+        // })
         .catch((err) => console.warn(err));
     }
 
@@ -149,6 +151,8 @@ const BudgetContextProvider = (props) => {
       })
       .catch((err) => console.log(err));
   };
+
+  console.log("earnings:", earnings);
 
   return (
     <BudgetContext.Provider

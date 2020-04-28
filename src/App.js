@@ -1,9 +1,12 @@
 import React from "react";
 import Budget from "./components/Budget";
-import TransactionsWraper from "./components/TransactionsWraper";
+// import TransactionsWraper from "./components/TransactionsWraper";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import NotFound from "./components/NotFound";
 import Navigation from "./components/Navigation";
+import Transactions from "./components/Transactions";
+import BudgetContextProvider from "./contexts/BudgetContext";
+import TransactionsContextProvider from "./contexts/TransactionsContext";
 
 function App() {
   return (
@@ -17,8 +20,12 @@ function App() {
     // </Router>
 
     <>
-      <Budget />
-      <TransactionsWraper />
+      <BudgetContextProvider>
+        <TransactionsContextProvider>
+          <Budget />
+          <Transactions />
+        </TransactionsContextProvider>
+      </BudgetContextProvider>
     </>
   );
 }

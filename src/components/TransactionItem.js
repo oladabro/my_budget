@@ -1,5 +1,5 @@
-import React, { useContext, useState, Component } from "react";
-import { TransactionsContext } from "../contexts/TransactionsContext";
+import React, { Component } from "react";
+// import { TransactionsContext } from "../contexts/TransactionsContext";
 
 // const TransactionItem = ({ props }) => {
 //   // const { date, category, amount, comment, id } = transaction;
@@ -59,7 +59,15 @@ class TransactionItem extends Component {
   render() {
     const { id, date, category, amount, comment } = this.state;
     const { categoryList } = this.props;
-    const { updateTransaction, removeTransaction } = this.props;
+
+    const {
+      updateTransaction,
+      removeTransaction,
+      earnings,
+      expenses,
+      evaluateActuals,
+    } = this.props;
+
     return (
       <div id={id} onBlur={() => updateTransaction(this.state)}>
         <button id={id} onClick={() => removeTransaction(id)}>
@@ -89,6 +97,7 @@ class TransactionItem extends Component {
           name="amount"
           value={amount}
           onChange={this.handleOnChange}
+          onBlur={() => evaluateActuals(this.state.category)}
         />
         <input
           type="text"
