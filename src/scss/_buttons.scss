@@ -4,8 +4,18 @@
   button {
     background-color: $primary-color;
     padding: 5px 10px;
+    border: none;
     color: white;
+    outline: none;
     font-weight: bold;
+    transition: 0.3s;
+    &:hover {
+      background-color: $primary-color-dark;
+      box-shadow: 0px 4px 7px 2px #00000030;
+    }
+    &:focus {
+      border: $primary-color-dark;
+    }
   }
 }
 
@@ -13,14 +23,33 @@
   button {
     background-color: $secondary-color;
     padding: 5px 10px;
+    border: none;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+    &:hover {
+      background-color: $secondary-color-dark;
+      box-shadow: 0px 4px 7px 2px #00000030;
+    }
   }
 }
 
 .table.earnings .budgetBtn {
   background-color: $primary-color;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: $primary-color-dark;
+    box-shadow: 0px 4px 7px 2px #00000030;
+  }
 }
 .table.expenses .budgetBtn {
   background-color: $secondary-color;
+  transition: 0.3s;
+  &:hover {
+    background-color: $secondary-color-dark;
+    box-shadow: 0px 4px 7px 2px #00000030;
+  }
 }
 
 .budgetBtn {
@@ -29,7 +58,7 @@
   left: -60px;
   width: auto;
   height: auto;
-  border-radius: 10px;
+  border-radius: 4px;
   border: none;
   padding: 5px 10px;
   color: white;

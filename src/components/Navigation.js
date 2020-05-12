@@ -8,6 +8,7 @@ const Navigation = () => {
   return (
     <nav>
       <div className="nav-bar container">
+        <div className="logo">MÓJ BUDŻET DOMOWY</div>
         <ul>
           <li>
             <Link onClick={evaluateActualsForTransactions} to="/">

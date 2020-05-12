@@ -1,3 +1,5 @@
+@import "./_variable.scss";
+
 .content {
   padding-top: 50px;
 
@@ -7,16 +9,20 @@
 }
 .budget-month {
   text-align: center;
-  font-size: 16px;
+  font-size: 22px;
+  font-family: $main-font;
 
   span {
     padding-right: 10px;
     font-size: inherit;
+    font-size: 22px;
   }
 
   select {
     padding-left: 3px;
-    width: 150px;
-    font-size: inherit;
+    width: auto;
+    outline: $secondary-color-dark;
+    // font-size: inherit;
+    background-color: white;
   }
 }

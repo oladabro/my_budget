@@ -11,13 +11,18 @@ nav .nav-bar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   height: 50px;
+}
+
+nav .nav-bar .logo {
+  font-size: 22px;
+  color: #0184b8;
 }
 
 nav ul {
@@ -58,18 +63,21 @@ nav ul a:hover {
 
 .budget-month {
   text-align: center;
-  font-size: 16px;
+  font-size: 22px;
+  font-family: "Lato", sans-serif;
 }
 
 .budget-month span {
   padding-right: 10px;
   font-size: inherit;
+  font-size: 22px;
 }
 
 .budget-month select {
   padding-left: 3px;
-  width: 150px;
-  font-size: inherit;
+  width: auto;
+  outline: #0184b8;
+  background-color: white;
 }
 
 .table {
@@ -124,6 +132,10 @@ nav ul a:hover {
   background-color: #08a6e4;
 }
 
+.summary .table-header-cell {
+  background-color: #fb3b64;
+}
+
 .table-header-cell {
   text-align: center;
   font-size: 16px;
@@ -175,8 +187,18 @@ nav ul a:hover {
 .table-row-cell {
   text-align: center;
   padding: 10px 0;
-  border: none;
+  border-left: none;
+  border-right: none;
+  border-top: 1px solid #e8e9ed;
+  border-bottom: 1px solid #e8e9ed;
+  outline: none;
   font-family: "Lato", sans-serif;
+}
+
+.table-row-cell::before {
+  content: "";
+  display: inline-block;
+  border: 1px solid #999;
 }
 
 .table-row-cell.special {
@@ -184,36 +206,100 @@ nav ul a:hover {
       grid-column-start: 3;
   grid-column-end: 4;
   color: purple;
+  font-weight: bold;
 }
 
 .table-row-cell.comment {
   text-align: left;
-  padding-left: 5px;
+  padding-left: 7px;
   resize: none;
   overflow: auto;
   height: auto;
-  background-color: #f7f7f7;
   font-family: "Lato", sans-serif;
+}
+
+.earnings input:focus,
+textarea:focus {
+  border: 1px solid #63ddb7;
+}
+
+.expenses input:focus,
+textarea:focus {
+  border: 1px solid #08a6e4;
+}
+
+.table.summary {
+  margin-bottom: 200px;
+}
+
+.summary .table-row-cell {
+  border-bottom: 2px solid #e8e9ed;
+  border-top: none;
+}
+
+.table-row-cell.empty {
+  background-color: white;
 }
 
 .table-btn.earnings button {
   background-color: #63ddb7;
   padding: 5px 10px;
+  border: none;
   color: white;
+  outline: none;
   font-weight: bold;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.table-btn.earnings button:hover {
+  background-color: #4ea78a;
+  -webkit-box-shadow: 0px 4px 7px 2px #00000030;
+          box-shadow: 0px 4px 7px 2px #00000030;
+}
+
+.table-btn.earnings button:focus {
+  border: #4ea78a;
 }
 
 .table-btn.expenses button {
   background-color: #08a6e4;
   padding: 5px 10px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.table-btn.expenses button:hover {
+  background-color: #0184b8;
+  -webkit-box-shadow: 0px 4px 7px 2px #00000030;
+          box-shadow: 0px 4px 7px 2px #00000030;
 }
 
 .table.earnings .budgetBtn {
   background-color: #63ddb7;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.table.earnings .budgetBtn:hover {
+  background-color: #4ea78a;
+  -webkit-box-shadow: 0px 4px 7px 2px #00000030;
+          box-shadow: 0px 4px 7px 2px #00000030;
 }
 
 .table.expenses .budgetBtn {
   background-color: #08a6e4;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.table.expenses .budgetBtn:hover {
+  background-color: #0184b8;
+  -webkit-box-shadow: 0px 4px 7px 2px #00000030;
+          box-shadow: 0px 4px 7px 2px #00000030;
 }
 
 .budgetBtn {
@@ -222,7 +308,7 @@ nav ul a:hover {
   left: -60px;
   width: auto;
   height: auto;
-  border-radius: 10px;
+  border-radius: 4px;
   border: none;
   padding: 5px 10px;
   color: white;

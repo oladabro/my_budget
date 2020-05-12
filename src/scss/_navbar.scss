@@ -8,9 +8,13 @@ nav {
 
   .nav-bar {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     height: 50px;
+    .logo {
+      font-size: 22px;
+      color: $secondary-color-dark;
+    }
   }
 
   ul {

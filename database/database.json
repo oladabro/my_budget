@@ -3,54 +3,69 @@
     {
       "date": "2020-05-26",
       "category": "ubrania",
-      "amount": "300",
-      "comment": "",
+      "amount": "-300",
+      "comment": "buty mama",
       "id": 2
     },
     {
       "date": "2020-05-25",
-      "category": "zywnosc",
-      "amount": "350",
+      "category": "przedszkole",
+      "amount": "-350",
       "comment": "",
       "id": 3
     },
     {
       "date": "2020-05-06",
-      "category": "zywnosc",
+      "category": "pensja",
       "amount": "1000",
       "comment": "lidl",
       "id": 4
     },
     {
       "date": "2020-05-03",
-      "category": "zywnosc",
+      "category": "żłobek",
       "amount": "-200",
       "comment": "",
       "id": 5
     },
     {
       "date": "2020-05-10",
-      "category": "zywnosc",
-      "amount": "350",
+      "category": "żywność",
+      "amount": "-350",
       "comment": "",
       "id": 6
+    },
+    {
+      "date": "2020-05-05",
+      "category": "auto",
+      "amount": "-200",
+      "comment": "paliwo",
+      "id": 7
     }
   ],
   "earnings": [
     {
-      "category": "pensja",
-      "budget": "7000",
+      "category": "500+",
+      "budget": "500",
       "actual": 0,
       "variance": "",
-      "id": "279f2800-945e-11ea-8a13-ef73f35fba17",
+      "id": "b1fdd680-9487-11ea-b5e0-dfa9e87bf910",
       "comment": ""
     },
     {
-      "category": "500plus",
-      "budget": "1000",
+      "category": "pensja",
+      "budget": "5000",
+      "actual": 1000,
+      "variance": "",
+      "id": "ba65b700-9489-11ea-b5e0-dfa9e87bf910",
+      "comment": ""
+    },
+    {
+      "category": "",
+      "budget": "",
       "actual": 0,
       "variance": "",
-      "id": "2842bb00-945e-11ea-8a13-ef73f35fba17",
+      "id": "0e4a6720-9490-11ea-bdb6-d5410e844e42",
       "comment": ""
     }
   ],
@@ -66,7 +81,7 @@
     {
       "category": "żywność",
       "budget": "-1000",
-      "actual": 0,
+      "actual": -350,
       "variance": 0,
       "id": "82c87c30-8b90-11ea-a73e-a352cec567c2",
       "comment": ""
@@ -82,7 +97,7 @@
     {
       "category": "przedszkole",
       "budget": "-600",
-      "actual": 0,
+      "actual": -350,
       "variance": "",
       "id": "c4936540-8c39-11ea-abd5-c706f0fefd83",
       "comment": ""
@@ -90,7 +105,7 @@
     {
       "category": "żłobek",
       "budget": "-900",
-      "actual": 0,
+      "actual": -200,
       "variance": "",
       "id": "ce9b9a30-8c39-11ea-abd5-c706f0fefd83",
       "comment": ""
@@ -106,7 +121,7 @@
     {
       "category": "ubrania",
       "budget": "-500",
-      "actual": 300,
+      "actual": -300,
       "variance": "",
       "id": "0a0b1900-8c3b-11ea-abd5-c706f0fefd83",
       "comment": ""
@@ -117,7 +132,7 @@
       "actual": 0,
       "variance": "",
       "id": "b1e1d5d0-8c3e-11ea-abd5-c706f0fefd83",
-      "comment": ""
+      "comment": "płatne do 3 miesiąca"
     },
     {
       "category": "ubrania dzieci",
@@ -134,12 +149,20 @@
       "variance": "",
       "id": "1f9454b0-9174-11ea-8b96-ad597612cf5b",
       "comment": ""
+    },
+    {
+      "category": "auto",
+      "budget": "-200",
+      "actual": -200,
+      "variance": "",
+      "id": "042d5fc0-9492-11ea-94a3-2f18f7cd0d92",
+      "comment": "paliwo"
     }
   ],
   "month": {
-    "currentMonth": "maj"
+    "currentMonth": "MAJ"
   },
   "editForm": {
-    "editFormGlobal": true
+    "editFormGlobal": false
   }
 }

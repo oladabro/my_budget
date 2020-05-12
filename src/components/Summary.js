@@ -34,32 +34,33 @@ const Summary = () => {
 
   console.log(totalPlannedExpenses);
   return (
-    <div>
-      <div className="table">
-        <h3 className="table-name">Podsumowanie</h3>
-        <div className="table-row">
-          <input
-            value="Przychody łącznie"
-            readOnly
-            className="table-row-cell"
-          />
-          <input
-            value={totalPlannedEarnings}
-            readOnly
-            className="table-row-cell"
-          />
-          <input
-            value={totalActualEarnings}
-            readOnly
-            className="table-row-cell"
-          />
-          <input
-            value={totalPlannedEarnings - totalActualEarnings}
-            readOnly
-            className="table-row-cell"
-          />
-        </div>
+    <div className="table summary">
+      <h3 className="table-name">Podsumowanie</h3>
+      <div className="table-header summary">
+        <input className="table-header-cell" value="Kategoria" readOnly />
+        <input className="table-header-cell" value="Plan" readOnly />
+        <input className="table-header-cell" value="Wykonanie" readOnly />
+        <input className="table-header-cell" value="Różnica" readOnly />
       </div>
+      <div className="table-row">
+        <input value="Przychody łącznie" readOnly className="table-row-cell" />
+        <input
+          value={totalPlannedEarnings}
+          readOnly
+          className="table-row-cell"
+        />
+        <input
+          value={totalActualEarnings}
+          readOnly
+          className="table-row-cell"
+        />
+        <input
+          value={totalPlannedEarnings - totalActualEarnings}
+          readOnly
+          className="table-row-cell"
+        />
+      </div>
+
       <div className="table-row">
         <input value="Wydatki łącznie" readOnly className="table-row-cell" />
         <input
@@ -92,6 +93,7 @@ const Summary = () => {
           readOnly
           className="table-row-cell"
         />
+        <input readOnly className="table-row-cell empty" />
         <p id="tooltip1" className="hide">
           Różnica między przychodami a planowanymi wydatkami. Jeśli jest
           mniejsza od zera to znaczy że jest potencjał by zaoszczędzić te

@@ -41,6 +41,10 @@
   background-color: $secondary-color;
 }
 
+.summary .table-header-cell {
+  background-color: #fb3b64;
+}
+
 .table-header-cell {
   text-align: center;
   font-size: 16px;
@@ -82,24 +86,57 @@
 .table-row-cell {
   text-align: center;
   padding: 10px 0;
-  border: none;
+  border-left: none;
+  border-right: none;
+  border-top: 1px solid $grid-color;
+  border-bottom: 1px solid $grid-color;
+  outline: none;
   // border-bottom: 1px solid f7f7f7;
   font-family: "Lato", sans-serif;
 
   // letter-spacing: 0.5px;
 }
+.table-row-cell::before {
+  content: "";
+  display: inline-block;
+  border: 1px solid #999;
+}
+
 .table-row-cell.special {
   grid-column-start: 3;
   grid-column-end: 4;
   color: purple;
+  font-weight: bold;
 }
 
 .table-row-cell.comment {
   text-align: left;
-  padding-left: 5px;
+  padding-left: 7px;
   resize: none;
   overflow: auto;
   height: auto;
-  background-color: #f7f7f7;
+  // background-color: #f7f7f7;
   font-family: "Lato", sans-serif;
+}
+
+.earnings input:focus,
+textarea:focus {
+  border: 1px solid $primary-color;
+}
+
+.expenses input:focus,
+textarea:focus {
+  border: 1px solid $secondary-color;
+}
+
+.table.summary {
+  margin-bottom: 200px;
+}
+.summary .table-row-cell {
+  border-bottom: 2px solid $grid-color;
+  border-top: none;
+}
+
+.table-row-cell.empty {
+  background-color: white;
 }

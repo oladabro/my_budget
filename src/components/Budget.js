@@ -39,9 +39,9 @@ const Budget = () => {
     <main className="container">
       <div className="container" className="content ">
         {/* <Link to="/transactions">Wydatki</Link> */}
-        <h1>Mój budżet domowy</h1>
+        {/* <h1>Mój budżet domowy</h1> */}
         <p className="budget-month">
-          <span>miesiąc:</span>
+          <span>MIESIĄC:</span>
           <select
             type="text"
             name="month"
@@ -51,18 +51,18 @@ const Budget = () => {
           >
             wybierz miesiąc
             <option>wybierz miesiąc</option>
-            <option>styczeń</option>
-            <option>luty</option>
-            <option>marzec</option>
-            <option>kwiecień</option>
-            <option>maj</option>
-            <option>czerwiec</option>
-            <option>lipiec</option>
-            <option>sierpień</option>
-            <option>wrzesień</option>
-            <option>październik</option>
-            <option>listopad</option>
-            <option>grudzień</option>
+            <option>STYCZEŃ</option>
+            <option>LUTY</option>
+            <option>MARZEC</option>
+            <option>KWIECIEŃ</option>
+            <option>MAJ</option>
+            <option>CZERWIEC</option>
+            <option>LIPIEC</option>
+            <option>SIERPIEŃ</option>
+            <option>WRZESIEŃ</option>
+            <option>PAŹDZIERNIK</option>
+            <option>LISTOPAD</option>
+            <option>GRUDZIEŃ</option>
           </select>
         </p>
         {editFormGlobal === true ? (
