@@ -1,0 +1,231 @@
+nav {
+  position: fixed;
+  background-color: white;
+  width: 100%;
+  z-index: 1;
+  -webkit-box-shadow: 0px 3px 6px #00000029;
+          box-shadow: 0px 3px 6px #00000029;
+}
+
+nav .nav-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 50px;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+nav ul a {
+  padding: 5px 10px;
+  font-size: 20px;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  color: black;
+  text-decoration: none;
+  color: #a5a5a5;
+  font-size: 20px;
+  text-align: center;
+}
+
+nav ul a:hover {
+  border-bottom: 3px solid #08a6e4;
+  color: black;
+}
+
+.content {
+  padding-top: 50px;
+}
+
+.content h1 {
+  text-align: center;
+}
+
+.budget-month {
+  text-align: center;
+  font-size: 16px;
+}
+
+.budget-month span {
+  padding-right: 10px;
+  font-size: inherit;
+}
+
+.budget-month select {
+  padding-left: 3px;
+  width: 150px;
+  font-size: inherit;
+}
+
+.table {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row: 2;
+      grid-row-start: 2;
+  grid-row-end: 3;
+  -ms-grid-columns: 20% 20% 20% 20% 20%;
+      grid-template-columns: 20% 20% 20% 20% 20%;
+  -ms-grid-rows: auto auto auto auto;
+      grid-template-rows: auto auto auto auto;
+  position: relative;
+}
+
+.table-name {
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.table-btn {
+  /* grid-column-start: 2;
+    grid-column-end: 3;
+    align-self: center;
+    padding-left: 20px; */
+  position: absolute;
+  left: 110px;
+  top: 18px;
+  /* left: 235px; */
+}
+
+.table-header {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 20% 20% 20% 20% 20%;
+      grid-template-columns: 20% 20% 20% 20% 20%;
+  -ms-grid-rows: 50px;
+      grid-template-rows: 50px;
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 6;
+}
+
+.earnings .table-header-cell {
+  background-color: #63ddb7;
+}
+
+.expenses .table-header-cell {
+  background-color: #08a6e4;
+}
+
+.table-header-cell {
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  color: white;
+}
+
+.table-row-cell:nth-of-type(4) {
+  background-color: #f7f7f7;
+}
+
+.table-row-cell:nth-of-type(2) {
+  color: #4ea78a;
+  font-weight: bold;
+}
+
+.table-row-cell:nth-of-type(3) {
+  color: #0184b8;
+  background-color: #f7f7f7;
+  font-weight: bold;
+}
+
+.table-row {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 20% 20% 20% 20% 20%;
+      grid-template-columns: 20% 20% 20% 20% 20%;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 6;
+  position: relative;
+}
+
+.category-btn {
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.row-content {
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 6;
+}
+
+.table-row-cell {
+  text-align: center;
+  padding: 10px 0;
+  border: none;
+  font-family: "Lato", sans-serif;
+}
+
+.table-row-cell.special {
+  -ms-grid-column: 3;
+      grid-column-start: 3;
+  grid-column-end: 4;
+  color: purple;
+}
+
+.table-row-cell.comment {
+  text-align: left;
+  padding-left: 5px;
+  resize: none;
+  overflow: auto;
+  height: auto;
+  background-color: #f7f7f7;
+  font-family: "Lato", sans-serif;
+}
+
+.table-btn.earnings button {
+  background-color: #63ddb7;
+  padding: 5px 10px;
+  color: white;
+  font-weight: bold;
+}
+
+.table-btn.expenses button {
+  background-color: #08a6e4;
+  padding: 5px 10px;
+}
+
+.table.earnings .budgetBtn {
+  background-color: #63ddb7;
+}
+
+.table.expenses .budgetBtn {
+  background-color: #08a6e4;
+}
+
+.budgetBtn {
+  position: absolute;
+  top: 22%;
+  left: -60px;
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  border: none;
+  padding: 5px 10px;
+  color: white;
+  font-weight: bold;
+}
+/*# sourceMappingURL=main.css.map */

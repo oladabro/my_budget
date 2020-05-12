@@ -51,6 +51,29 @@ class TransactionItem extends Component {
 
   handleOnChange = (e) => {
     const { name, value } = e.target;
+    const { category } = this.state;
+    // if (value !== category && category == "") {
+    //   console.log(
+    //     `stary state ${this.state.category}, nowa kategoria: ${e.target.value}`
+    //   );
+    //   this.setState({
+    //     [name]: value,
+    //   });
+    // } else if (value !== category && category !== "") {
+    //   console.log("musze się przeliczyć");
+    //   console.log(
+    //     `stary state ${this.state.category}, nowa kategoria: ${e.target.value}`
+    //   );
+
+    //   this.props.updateActualForCategory(category, this.state.amount);
+
+    //   this.setState({
+    //     [name]: value,
+    //   });
+    //   console.log(this.props.transactions);
+    //   // this.props.evaluateActuals(category, this.state.amount);
+    // }
+
     this.setState({
       [name]: value,
     });
@@ -63,14 +86,17 @@ class TransactionItem extends Component {
     const {
       updateTransaction,
       removeTransaction,
-      earnings,
-      expenses,
-      evaluateActuals,
+      // evaluateActuals,
     } = this.props;
+
+    // const fireActions = (id, category) => {
+    //   removeTransaction(id, category);
+    //   // evaluateActuals(category);
+    // };
 
     return (
       <div id={id} onBlur={() => updateTransaction(this.state)}>
-        <button id={id} onClick={() => removeTransaction(id)}>
+        <button id={id} onClick={() => removeTransaction(id, category)}>
           -
         </button>
         <input
@@ -84,10 +110,11 @@ class TransactionItem extends Component {
           name="category"
           value={category}
           onChange={this.handleOnChange}
+          // onFocus={this.handleClick}
         >
           <option>wybierz kategorie</option>
           {categoryList.map((category) => {
-            if (!category == "") {
+            if (category !== "") {
               return <option key={category}>{category}</option>;
             }
           })}
@@ -97,7 +124,7 @@ class TransactionItem extends Component {
           name="amount"
           value={amount}
           onChange={this.handleOnChange}
-          onBlur={() => evaluateActuals(this.state.category)}
+          // onBlur={() => evaluateActuals(category)}
         />
         <input
           type="text"
@@ -105,6 +132,9 @@ class TransactionItem extends Component {
           value={comment}
           onChange={this.handleOnChange}
         />
+        {/* <button id={id} onClick={() => evaluateActuals(category)}>
+          save
+        </button> */}
       </div>
     );
   }

@@ -1,0 +1,37 @@
+@import "./_variable.scss";
+
+.table-btn.earnings {
+  button {
+    background-color: $primary-color;
+    padding: 5px 10px;
+    color: white;
+    font-weight: bold;
+  }
+}
+
+.table-btn.expenses {
+  button {
+    background-color: $secondary-color;
+    padding: 5px 10px;
+  }
+}
+
+.table.earnings .budgetBtn {
+  background-color: $primary-color;
+}
+.table.expenses .budgetBtn {
+  background-color: $secondary-color;
+}
+
+.budgetBtn {
+  position: absolute;
+  top: 22%;
+  left: -60px;
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  border: none;
+  padding: 5px 10px;
+  color: white;
+  font-weight: bold;
+}

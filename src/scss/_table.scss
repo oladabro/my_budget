@@ -1,0 +1,105 @@
+@import "./_variable.scss";
+
+.table {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: auto auto auto auto;
+  position: relative;
+}
+.table-name {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.table-btn {
+  /* grid-column-start: 2;
+    grid-column-end: 3;
+    align-self: center;
+    padding-left: 20px; */
+  position: absolute;
+  left: 110px;
+  top: 18px;
+  /* left: 235px; */
+}
+
+.table-header {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 50px;
+  grid-column-start: 1;
+  grid-column-end: 6;
+}
+
+.earnings .table-header-cell {
+  background-color: $primary-color;
+}
+.expenses .table-header-cell {
+  background-color: $secondary-color;
+}
+
+.table-header-cell {
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  color: white;
+}
+
+.table-row-cell:nth-of-type(4) {
+  background-color: #f7f7f7;
+}
+
+.table-row-cell:nth-of-type(2) {
+  color: $primary-color-dark;
+  font-weight: bold;
+}
+.table-row-cell:nth-of-type(3) {
+  color: $secondary-color-dark;
+  background-color: #f7f7f7;
+  font-weight: bold;
+}
+.table-row {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: auto;
+  grid-column-start: 1;
+  grid-column-end: 6;
+  position: relative;
+}
+
+.category-btn {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+.row-content {
+  grid-column-start: 1;
+  grid-column-end: 6;
+}
+.table-row-cell {
+  text-align: center;
+  padding: 10px 0;
+  border: none;
+  // border-bottom: 1px solid f7f7f7;
+  font-family: "Lato", sans-serif;
+
+  // letter-spacing: 0.5px;
+}
+.table-row-cell.special {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  color: purple;
+}
+
+.table-row-cell.comment {
+  text-align: left;
+  padding-left: 5px;
+  resize: none;
+  overflow: auto;
+  height: auto;
+  background-color: #f7f7f7;
+  font-family: "Lato", sans-serif;
+}

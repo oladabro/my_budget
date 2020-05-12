@@ -1,85 +1,145 @@
 {
   "transactions": [
     {
-      "date": "2020-04-28",
-      "category": "500+",
-      "amount": "-700",
+      "date": "2020-05-26",
+      "category": "ubrania",
+      "amount": "300",
       "comment": "",
       "id": 2
     },
     {
-      "date": "",
-      "category": "żywność",
-      "amount": "1000",
+      "date": "2020-05-25",
+      "category": "zywnosc",
+      "amount": "350",
       "comment": "",
       "id": 3
     },
     {
-      "date": "",
-      "category": "żywność",
+      "date": "2020-05-06",
+      "category": "zywnosc",
       "amount": "1000",
-      "comment": "",
+      "comment": "lidl",
       "id": 4
     },
     {
-      "date": "",
-      "category": "żywność",
-      "amount": "100",
+      "date": "2020-05-03",
+      "category": "zywnosc",
+      "amount": "-200",
       "comment": "",
       "id": 5
     },
     {
-      "date": "",
-      "category": "żywność",
-      "amount": "100",
+      "date": "2020-05-10",
+      "category": "zywnosc",
+      "amount": "350",
       "comment": "",
       "id": 6
-    },
-    {
-      "date": "",
-      "category": "żywność",
-      "amount": "100",
-      "comment": "",
-      "id": 7
     }
   ],
   "earnings": [
     {
-      "category": "500+",
-      "budget": "-1000",
-      "actual": 0,
-      "variance": 0,
-      "id": "4b923af0-8594-11ea-a5c1-f5ae1160cdab"
-    },
-    {
       "category": "pensja",
-      "budget": "-7000",
+      "budget": "7000",
       "actual": 0,
-      "variance": 0,
-      "id": "11266270-8962-11ea-b9ea-59a4abaa3ab5"
+      "variance": "",
+      "id": "279f2800-945e-11ea-8a13-ef73f35fba17",
+      "comment": ""
     },
     {
-      "category": "dupa",
-      "budget": "",
+      "category": "500plus",
+      "budget": "1000",
       "actual": 0,
-      "variance": 0,
-      "id": "b5323bf0-8962-11ea-ad74-19fa583b8ebc"
+      "variance": "",
+      "id": "2842bb00-945e-11ea-8a13-ef73f35fba17",
+      "comment": ""
     }
   ],
   "expenses": [
     {
-      "category": "przyjemności",
-      "budget": "100",
+      "category": "przyjemnosci",
+      "budget": "-500",
       "actual": 0,
       "variance": 0,
-      "id": "18e71860-8962-11ea-b9ea-59a4abaa3ab5"
+      "id": "8276b2b0-8b90-11ea-a73e-a352cec567c2",
+      "comment": ""
     },
     {
       "category": "żywność",
-      "budget": "200",
+      "budget": "-1000",
       "actual": 0,
       "variance": 0,
-      "id": "22fb65d0-8963-11ea-aae7-1b6842ea26f3"
+      "id": "82c87c30-8b90-11ea-a73e-a352cec567c2",
+      "comment": ""
+    },
+    {
+      "category": "czynsz",
+      "budget": "-200",
+      "actual": 0,
+      "variance": "",
+      "id": "c43e1950-8c39-11ea-abd5-c706f0fefd83",
+      "comment": "płatne do 4 m-ca"
+    },
+    {
+      "category": "przedszkole",
+      "budget": "-600",
+      "actual": 0,
+      "variance": "",
+      "id": "c4936540-8c39-11ea-abd5-c706f0fefd83",
+      "comment": ""
+    },
+    {
+      "category": "żłobek",
+      "budget": "-900",
+      "actual": 0,
+      "variance": "",
+      "id": "ce9b9a30-8c39-11ea-abd5-c706f0fefd83",
+      "comment": ""
+    },
+    {
+      "category": "t-mobile",
+      "budget": "-100",
+      "actual": 0,
+      "variance": "",
+      "id": "d476c740-8c39-11ea-abd5-c706f0fefd83",
+      "comment": "płatne do 15 m-ca"
+    },
+    {
+      "category": "ubrania",
+      "budget": "-500",
+      "actual": 300,
+      "variance": "",
+      "id": "0a0b1900-8c3b-11ea-abd5-c706f0fefd83",
+      "comment": ""
+    },
+    {
+      "category": "media",
+      "budget": "-200",
+      "actual": 0,
+      "variance": "",
+      "id": "b1e1d5d0-8c3e-11ea-abd5-c706f0fefd83",
+      "comment": ""
+    },
+    {
+      "category": "ubrania dzieci",
+      "budget": "-300",
+      "actual": 0,
+      "variance": "",
+      "id": "15fee0e0-8fd6-11ea-8144-75a1137e6e0f",
+      "comment": "buty Szymka, piżama,\nkurtka zimowa,\nokulary"
+    },
+    {
+      "category": "oszczędzanie",
+      "budget": "-1000",
+      "actual": 0,
+      "variance": "",
+      "id": "1f9454b0-9174-11ea-8b96-ad597612cf5b",
+      "comment": ""
     }
-  ]
+  ],
+  "month": {
+    "currentMonth": "maj"
+  },
+  "editForm": {
+    "editFormGlobal": true
+  }
 }

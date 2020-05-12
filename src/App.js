@@ -1,33 +1,22 @@
-import React from "react";
-import Budget from "./components/Budget";
+import React, { useContext } from "react";
+import AppWrapper from "./components/AppWrapper";
 // import TransactionsWraper from "./components/TransactionsWraper";
-import { HashRouter as Router, Route, Switch } from "react-router-dom";
-import NotFound from "./components/NotFound";
-import Navigation from "./components/Navigation";
+
+// import Navigation from "./components/Navigation";
 import Transactions from "./components/Transactions";
-import BudgetContextProvider from "./contexts/BudgetContext";
+import BudgetContextProvider, { BudgetContext } from "./contexts/BudgetContext";
 import TransactionsContextProvider from "./contexts/TransactionsContext";
 
-function App() {
+const App = () => {
   return (
-    // <Router>
-    //   <Navigation />
-    //   <Switch>
-    //     <Route exact path="/" component={Budget} />
-    //     <Route path="/transactions" component={TransactionsWraper} />
-    //     <Route component={NotFound} />
-    //   </Switch>
-    // </Router>
-
-    <>
+    <div >
       <BudgetContextProvider>
         <TransactionsContextProvider>
-          <Budget />
-          <Transactions />
+          <AppWrapper />
         </TransactionsContextProvider>
       </BudgetContextProvider>
-    </>
+    </div>
   );
-}
+};
 
 export default App;

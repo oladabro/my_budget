@@ -3,19 +3,38 @@ import { BudgetContext } from "../contexts/BudgetContext";
 import BudgetCategory from "./BudgetCategory";
 
 const Expenses = () => {
-  const { expenses, addBudgetCategory } = useContext(BudgetContext);
+  const { expenses, addBudgetCategory, editForm } = useContext(BudgetContext);
+  const { editFormGlobal } = editForm;
   return (
-    <div>
-      <p>Aktualnie masz {expenses.length} kategorii wydatkow w budżecie</p>
-      <button id="addExpensesBtn" onClick={(event) => addBudgetCategory(event)}>
-        +
-      </button>
+    <div className="table expenses">
+      <h3 className="table-name">Wydatki</h3>
+      <div className="table-btn expenses">
+        {editFormGlobal === true && (
+          <button
+            id="addExpensesBtn"
+            onClick={(event) => addBudgetCategory(event)}
+          >
+            +
+          </button>
+        )}
+      </div>
+      <div className="table-header expenses">
+        <input className="table-header-cell" value="Kategoria" readOnly />
+        <input className="table-header-cell" value="Plan" readOnly />
+        <input className="table-header-cell" value="Wykonanie" readOnly />
+        <input className="table-header-cell" value="Różnica" readOnly />
+        <input
+          className="table-header-cell"
+          value="Dodatkowe informacje"
+          readOnly
+        />
+      </div>
       {expenses.length ? (
-        <div>
+        <>
           {expenses.map((expense) => {
             return <BudgetCategory earning={expense} key={expense.id} />;
           })}
-        </div>
+        </>
       ) : (
         <p>Naciśnij + by dodać kategorie do budżetu</p>
       )}

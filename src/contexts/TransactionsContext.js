@@ -1,11 +1,6 @@
-import React, {
-  createContext,
-  useState,
-  useEffect,
-  Component,
-  useContext,
-} from "react";
+import React, { createContext, useState, useEffect, useContext } from "react";
 import BudgetContextProvider, { BudgetContext } from "./BudgetContext";
+import evaluateActuals from "../components/Transactions";
 
 export const TransactionsContext = createContext();
 
@@ -21,24 +16,23 @@ const resolveResponse = (resp) => {
 const TransactionsContextProvider = (props) => {
   const [transactions, setTransactions] = useState([]);
 
-  const { earnings } = useContext(BudgetContext);
+  const {
+    earnings,
+    expenses,
+    setEarnings,
+    setExpenses,
+    categoryList,
+  } = useContext(BudgetContext);
 
   //ładuje dane do state
   useEffect(() => {
-    console.log("chce zaladowac dane z basy");
     fetch(`${DOMAIN}/transactions`)
       .then(resolveResponse)
       .then((transactions) => setTransactions([...transactions]))
       .catch((err) => console.log(err));
   }, []);
 
-  useEffect(() => {
-    console.log("useEffect runs", transactions);
-  }, [transactions]);
-
-  // useEffect(() => {
-  //   console.log("co mam zrobić");
-  // }, [transactions]);
+  // useEffect(evaluateActualsForTransactions(), [transactions]);
 
   //dodaje nową pustą transakcje do tablicy
   const addTransaction = () => {
@@ -64,18 +58,24 @@ const TransactionsContextProvider = (props) => {
   };
 
   //usuwam transaction z tablicy
-  const removeTransaction = (id) => {
+  const removeTransaction = (id, category) => {
     console.log(id);
     fetch(`${DOMAIN}/transactions/${id}`, {
       method: "DELETE",
     })
       .then(resolveResponse)
       .then(() => {
-        setTransactions(
-          transactions.filter((transaction) => transaction.id != id)
+        // const array = [...transactions];
+        const array = transactions.filter(
+          (transaction) => transaction.id != id
         );
+        console.log(array);
+        evaluateActuals(array, category);
+        setTransactions([...array]);
       })
       .catch((err) => console.warn(err));
+
+    // evaluateActuals(category);
   };
 
   //uaktualniam dane w tablicy
@@ -95,119 +95,140 @@ const TransactionsContextProvider = (props) => {
       }),
     };
 
-    console.log(requestOptions);
     fetch(`${DOMAIN}/transactions/${id}`, requestOptions)
       .then(resolveResponse)
-      // .then((resp) => {
-      //   const array = [...transactions];
+      .then((resp) => {
+        const array = [...transactions];
 
-      //   let index = array.find((el) => el.id == id);
-      //   index = resp;
-      //   console.log(index);
+        let index = array.findIndex((el) => el.id === id);
+        array[index] = resp;
 
-      //   setTransactions([...array]);
-      //   console.log(transactions);
-      // })
+        setTransactions([...array]);
+
+        // const arrayForCategory = array.filter(
+        //   (transaction) => transaction.category === category
+        // );
+        // const arrayForCategoryWithAmounts = arrayForCategory.filter(
+        //   (el) => el.amount !== ""
+        // );
+        // console.log(arrayForCategory);
+        // const actualForCategory = arrayForCategoryWithAmounts.reduce(
+        //   (prev, curr) => parseFloat(prev) + parseFloat(curr.amount),
+        //   0
+        // );
+        // console.log(actualForCategory);
+        // updateActuals(category, actualForCategory);
+      })
       .catch((err) => console.warn(err));
-
-    fetch(`${DOMAIN}/transactions`)
-      .then(resolveResponse)
-      .then((transactions) => {
-        setTransactions([...transactions]);
-      })
-      .catch((err) => console.log(err));
-
-    // if (amount) {
-    //   console.log("chce się przeliczyć");
-    //   evaluateActuals(category);
-    // }
   };
-  console.log(transactions);
 
-  const evaluateActuals = (category) => {
-    fetch(`${DOMAIN}/transactions`)
-      .then(resolveResponse)
-      .then((transactions) => {
-        setTransactions([...transactions]);
-      })
-      .catch((err) => console.log(err));
+  const updateActuals = (category, data) => {
+    const requestOptions = {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        actual: data,
+      }),
+    };
 
-    console.log(transactions);
-    const arrayForCategory = transactions.filter(
-      (transaction) => transaction.category == category
+    if (earnings.find((el) => el.category === category)) {
+      const array = [...earnings];
+      console.log(array);
+      const categoryWithNewActualsIndex = array.findIndex(
+        (el) => el.category === category
+      );
+      array[categoryWithNewActualsIndex].actual = data;
+      setEarnings([...array]);
+      const categoryId = earnings.find((el) => el.category === category).id;
+      fetch(`${DOMAIN}/earnings/${categoryId}`, requestOptions)
+        .then(resolveResponse)
+        .then((resp) => console.log(resp))
+        .catch((err) => console.warn(err));
+    }
+
+    if (expenses.find((el) => el.category === category)) {
+      const array = [...expenses];
+      const categoryWithNewActualsIndex = array.findIndex(
+        (el) => el.category === category
+      );
+      array[categoryWithNewActualsIndex].actual = data;
+      setExpenses([...array]);
+      const categoryId = expenses.find((el) => el.category === category).id;
+      fetch(`${DOMAIN}/expenses/${categoryId}`, requestOptions)
+        .then(resolveResponse)
+        .then((resp) => console.log(resp))
+        .catch((err) => console.warn(err));
+    }
+  };
+
+  // const updateActualForCategory = (category, data) => {
+  //   const arrayForCategory = transactions.filter(
+  //     (item) => item.category === category
+  //   );
+
+  //   const arrayForCategoryWithAmounts = arrayForCategory.filter(
+  //     (el) => el.amount !== ""
+  //   );
+
+  //   const actualForCategory =
+  //     arrayForCategoryWithAmounts.reduce(
+  //       (prev, curr) => parseFloat(prev) + parseFloat(curr.amount),
+  //       0
+  //     ) - data;
+
+  //   updateActuals(category, actualForCategory);
+
+  //   console.log(arrayForCategory, data);
+  // };
+
+  const evaluateActualsForTransactions = () => {
+    console.log(categoryList);
+
+    categoryList.forEach((category) => {
+      const arrayForCategory = transactions.filter(
+        (transaction) => transaction.category === category
+      );
+      const arrayForCategoryWithAmounts = arrayForCategory.filter(
+        (el) => el.amount !== ""
+      );
+      const actualForCategory = arrayForCategoryWithAmounts.reduce(
+        (prev, curr) => parseFloat(prev) + parseFloat(curr.amount),
+        0
+      );
+      updateActuals(category, actualForCategory);
+    });
+  };
+
+  const filterTransactions = (category) => {
+    transactions.map((transaction) => {
+      return (
+        <>
+          <input readOnly>{transaction.date}</input>
+          <input readOnly>{transaction.category}</input>;
+        </>
+      );
+    });
+  };
+
+  const evaluateActuals = (array, category) => {
+    console.log(category);
+
+    const arrayForCategory = array.filter(
+      (transaction) => transaction.category === category
     );
-
+    const arrayForCategoryWithAmounts = arrayForCategory.filter(
+      (el) => el.amount !== ""
+    );
     console.log(arrayForCategory);
-    const actualForCategory = arrayForCategory.reduce(
+    const actualForCategory = arrayForCategoryWithAmounts.reduce(
       (prev, curr) => parseFloat(prev) + parseFloat(curr.amount),
       0
     );
     console.log(actualForCategory);
-    // const searchedItem = earnings.find(
-    //   (earning) => earning.category === category
-    // );
-
-    console.log(transactions);
+    updateActuals(category, actualForCategory);
   };
-
-  // calculateActuals = () => {
-  //   const { earningsCategory } = this.state;
-  //   const { transactions } = this.props;
-
-  //   if (transactions.length) {
-  //     const { transactions } = this.props;
-
-  //     earningsCategory.forEach((element) => {
-  //       const name = element.name;
-  //       console.log(name);
-  //       const array = transactions.filter(
-  //         (transaction) => transaction.category == name
-  //       );
-  //       console.log(array);
-  //       const actual = array.reduce(
-  //         (prev, curr) => parseFloat(prev) + parseFloat(curr.amount),
-  //         0
-  //       );
-  //       const searchedItem = earningsCategory.find(
-  //         (category) => category.name === name
-  //       );
-  //       searchedItem.actual = actual;
-  //       console.log(earningsCategory);
-  //       console.log(searchedItem.id);
-  //     });
-  //     this.props.updateState();
-  //     this.patchData();
-
-  //     console.log("moj state", this.state.earningsCategory);
-  //   }
-  // };
-
-  // patchData = () => {
-  //   const earningsCategory = this.state.earningsCategory;
-
-  //   earningsCategory.forEach((element) => {
-  //     const id = element.id;
-  //     const actual = element.actual;
-
-  //     const requestOptions = {
-  //       method: "PATCH",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify({
-  //         actual,
-  //       }),
-  //     };
-
-  //     fetch(`${DOMAIN}/earningsCategory/${id}`, requestOptions)
-  //       .then(resolveResponse)
-  //       .then(() =>
-  //         this.setState((prevState) => ({
-  //           earningsCategory: prevState.earningsCategory,
-  //         }))
-  //       );
-  //   });
-  // };
 
   return (
     <TransactionsContext.Provider
@@ -217,83 +238,15 @@ const TransactionsContextProvider = (props) => {
         removeTransaction,
         updateTransaction,
         evaluateActuals,
+        updateActuals,
+        // updateActualForCategory,
+        evaluateActualsForTransactions,
+        filterTransactions,
       }}
     >
       {props.children}
     </TransactionsContext.Provider>
   );
 };
-
-// class TransactionsContextProvider extends Component {
-//   state = {
-//     transactions: [],
-//   };
-
-//   componentDidMount() {
-//     fetch(`${DOMAIN}/transactions`)
-//       .then(resolveResponse)
-//       .then((transactions) => {
-//         this.setState({
-//           transactions: [...transactions],
-//         });
-//       })
-//       .catch((err) => console.log(err));
-//   }
-
-//   addTransaction = () => {
-//     const requestOptions = {
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//       body: JSON.stringify({
-//         date: "",
-//         category: "",
-//         amount: "",
-//         comment: "",
-//       }),
-//     };
-
-//     fetch(`${DOMAIN}/transactions`, requestOptions)
-//       .then(resolveResponse)
-//       .then((transaction) =>
-//         this.setState((prevState) => ({
-//           transactions: [...prevState.transactions, transaction],
-//         }))
-//       )
-
-//       .catch((err) => console.warn(err));
-//   };
-
-//   removeTransaction = (id) => {
-//     console.log(id);
-//     fetch(`${DOMAIN}/transactions/${id}`, {
-//       method: "DELETE",
-//     })
-//       .then(resolveResponse)
-//       .then(() => {
-//         const transactions = this.state.transactions.filter(
-//           (transaction) => transaction.id != id
-//         );
-//         this.setState({
-//           transactions,
-//         });
-//       })
-//       .catch((err) => console.warn(err));
-//   };
-
-//   render() {
-//     const { transactions } = this.state;
-//     const addTransaction = this.addTransaction;
-//     const removeTransaction = this.removeTransaction;
-//     return (
-//       <TransactionsContext.Provider
-//         value={{ transactions, addTransaction, removeTransaction }}
-//       >
-//         {this.props.children}
-//       </TransactionsContext.Provider>
-//     );
-//   }
-// }
 
 export default TransactionsContextProvider;
