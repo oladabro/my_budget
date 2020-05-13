@@ -66,9 +66,9 @@ const Budget = () => {
           </select>
         </p>
         {editFormGlobal === true ? (
-          <button onClick={saveTemplate}>Zapisz szablon</button>
+          <button className="editFormBtn" onClick={saveTemplate}>Zapisz szablon</button>
         ) : (
-          <button onClick={editTemplate}>Edytuj szablon</button>
+          <button className="editFormBtn" onClick={editTemplate}>Edytuj szablon</button>
         )}
         <Earnings />
         <p style={{ color: "red" }}>{error}</p>

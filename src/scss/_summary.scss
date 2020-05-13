@@ -1,0 +1,14 @@
+.tooltip {
+  position: absolute;
+  z-index: 1;
+  width: 50%;
+  font-size: 14px;
+  border: 1px solid $grid-color;
+  background-color: $non-editable-color;
+  padding: 10px 15px;
+  top: 20px;
+}
+
+.table-row.tooltips {
+  position: relative;
+}

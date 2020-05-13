@@ -96,7 +96,11 @@ class TransactionItem extends Component {
 
     return (
       <div id={id} onBlur={() => updateTransaction(this.state)}>
-        <button id={id} onClick={() => removeTransaction(id, category)}>
+        <button
+          id={id}
+          onClick={() => removeTransaction(id, category)}
+          className="delete-transaction"
+        >
           -
         </button>
         <input

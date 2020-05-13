@@ -41,17 +41,142 @@
       "amount": "-200",
       "comment": "paliwo",
       "id": 7
+    },
+    {
+      "date": "",
+      "category": "",
+      "amount": "",
+      "comment": "",
+      "id": 8
+    },
+    {
+      "date": "",
+      "category": "",
+      "amount": "",
+      "comment": "",
+      "id": 9
+    },
+    {
+      "date": "",
+      "category": "",
+      "amount": "",
+      "comment": "",
+      "id": 10
+    },
+    {
+      "date": "",
+      "category": "",
+      "amount": "",
+      "comment": "",
+      "id": 11
+    },
+    {
+      "date": "",
+      "category": "",
+      "amount": "",
+      "comment": "",
+      "id": 12
+    },
+    {
+      "date": "",
+      "category": "",
+      "amount": "",
+      "comment": "",
+      "id": 13
+    },
+    {
+      "date": "",
+      "category": "",
+      "amount": "",
+      "comment": "",
+      "id": 14
+    },
+    {
+      "date": "",
+      "category": "",
+      "amount": "",
+      "comment": "",
+      "id": 15
+    },
+    {
+      "date": "",
+      "category": "",
+      "amount": "",
+      "comment": "",
+      "id": 16
+    },
+    {
+      "date": "",
+      "category": "",
+      "amount": "",
+      "comment": "",
+      "id": 17
+    },
+    {
+      "date": "",
+      "category": "",
+      "amount": "",
+      "comment": "",
+      "id": 18
+    },
+    {
+      "date": "",
+      "category": "",
+      "amount": "",
+      "comment": "",
+      "id": 19
+    },
+    {
+      "date": "",
+      "category": "",
+      "amount": "",
+      "comment": "",
+      "id": 20
+    },
+    {
+      "date": "",
+      "category": "",
+      "amount": "",
+      "comment": "",
+      "id": 21
+    },
+    {
+      "date": "",
+      "category": "",
+      "amount": "",
+      "comment": "",
+      "id": 22
+    },
+    {
+      "date": "",
+      "category": "",
+      "amount": "",
+      "comment": "",
+      "id": 23
+    },
+    {
+      "date": "",
+      "category": "",
+      "amount": "",
+      "comment": "",
+      "id": 24
+    },
+    {
+      "date": "",
+      "category": "",
+      "amount": "",
+      "comment": "",
+      "id": 25
+    },
+    {
+      "date": "",
+      "category": "",
+      "amount": "",
+      "comment": "",
+      "id": 26
     }
   ],
   "earnings": [
-    {
-      "category": "500+",
-      "budget": "500",
-      "actual": 0,
-      "variance": "",
-      "id": "b1fdd680-9487-11ea-b5e0-dfa9e87bf910",
-      "comment": ""
-    },
     {
       "category": "pensja",
       "budget": "5000",
@@ -61,11 +186,11 @@
       "comment": ""
     },
     {
-      "category": "",
-      "budget": "",
+      "category": "500plus",
+      "budget": "500",
       "actual": 0,
       "variance": "",
-      "id": "0e4a6720-9490-11ea-bdb6-d5410e844e42",
+      "id": "c1f24050-9507-11ea-b209-3bd71259cc7b",
       "comment": ""
     }
   ],

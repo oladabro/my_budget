@@ -30,29 +30,35 @@ const Transactions = () => {
     .reduce((prev, curr) => parseFloat(prev) + parseFloat(curr.amount), 0);
 
   return (
-    <div>
+    <main className="container">
       {/* <Link to="/">Budżet</Link> */}
-      <h3>Bieżące wydatki miesiąca {transactions.length}</h3>
-      <h4>suma: {sumOfTransactions}</h4>
+      <h3 className="transaction-title">
+        Bieżące wydatki miesiąca: {transactions.length}
+      </h3>
+      <h4 className="transaction-subtitle">suma: {sumOfTransactions}</h4>
       {/* <button onClick={evaluateActualsForTransactions}>Zapisz</button> */}
-      <button onClick={() => addTransaction()}>Dodaj wydatki</button>
-      <input value="Data" readOnly />
-      <select
-        type="text"
-        name="category"
-        value={category}
-        onChange={(e) => handleChange(e)}
-        // onFocus={this.handleClick}
-      >
-        <option>Kategoria</option>
-        {categoryList.map((category) => {
-          if (category !== "") {
-            return <option key={category}>{category}</option>;
-          }
-        })}
-      </select>
-      <input value="Kwota" readOnly />
-      <input value="Dodatkowe informacje" readOnly />
+      <button className="addTransaction" onClick={() => addTransaction()}>
+        Dodaj wydatki
+      </button>
+      <div className="table-transactions">
+        <input value="Data" readOnly />
+        <select
+          type="text"
+          name="category"
+          value={category}
+          onChange={(e) => handleChange(e)}
+          // onFocus={this.handleClick}
+        >
+          <option>Kategoria</option>
+          {categoryList.map((category) => {
+            if (category !== "") {
+              return <option key={category}>{category}</option>;
+            }
+          })}
+        </select>
+        <input value="Kwota" readOnly />
+        <input value="Dodatkowe informacje" readOnly />
+      </div>
 
       {
         (transactions.length && category == "") || category == "Kategoria" ? (
@@ -84,7 +90,7 @@ const Transactions = () => {
         // ) : (
         // //   <p>Naciśnij + by dodać wydatki</p>
       }
-    </div>
+    </main>
   );
 };
 

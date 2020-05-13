@@ -62,6 +62,7 @@ nav ul a:hover {
 }
 
 .budget-month {
+  margin: 50px 0;
   text-align: center;
   font-size: 22px;
   font-family: "Lato", sans-serif;
@@ -75,14 +76,22 @@ nav ul a:hover {
 
 .budget-month select {
   padding-left: 3px;
+  border-top: 1px solid transparent;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+  border-bottom: 1px solid black;
   width: auto;
-  outline: #0184b8;
+  outline: none;
   background-color: white;
+}
+
+.budget-month select:focus {
+  border: 1px solid #08a6e4;
 }
 
 .table {
   max-width: 1000px;
-  margin: 0 auto;
+  margin: 50px auto;
   display: -ms-grid;
   display: grid;
   -ms-grid-row: 2;
@@ -99,6 +108,7 @@ nav ul a:hover {
   -ms-grid-column: 1;
       grid-column-start: 1;
   grid-column-end: 2;
+  margin-bottom: 15px;
 }
 
 .table-btn {
@@ -195,12 +205,6 @@ nav ul a:hover {
   font-family: "Lato", sans-serif;
 }
 
-.table-row-cell::before {
-  content: "";
-  display: inline-block;
-  border: 1px solid #999;
-}
-
 .table-row-cell.special {
   -ms-grid-column: 3;
       grid-column-start: 3;
@@ -219,12 +223,12 @@ nav ul a:hover {
 }
 
 .earnings input:focus,
-textarea:focus {
+.earnings textarea:focus {
   border: 1px solid #63ddb7;
 }
 
 .expenses input:focus,
-textarea:focus {
+.expenses textarea:focus {
   border: 1px solid #08a6e4;
 }
 
@@ -241,10 +245,48 @@ textarea:focus {
   background-color: white;
 }
 
+.table-transactions {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 15% 20% 20% 25%;
+      grid-template-columns: 15% 20% 20% 25%;
+  -ms-grid-rows: 50px;
+      grid-template-rows: 50px;
+}
+
+.table-transactions input {
+  padding: 10px 0;
+}
+
+.table-transactions-row {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 15% 20% 20% 25%;
+      grid-template-columns: 15% 20% 20% 25%;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  position: relative;
+}
+
+.tooltip {
+  position: absolute;
+  z-index: 1;
+  width: 50%;
+  font-size: 14px;
+  border: 1px solid #e8e9ed;
+  background-color: #f7f7f7;
+  padding: 10px 15px;
+  top: 20px;
+}
+
+.table-row.tooltips {
+  position: relative;
+}
+
 .table-btn.earnings button {
   background-color: #63ddb7;
   padding: 5px 10px;
-  border: none;
+  border: 1px solid transparent;
   color: white;
   outline: none;
   font-weight: bold;
@@ -259,13 +301,14 @@ textarea:focus {
 }
 
 .table-btn.earnings button:focus {
-  border: #4ea78a;
+  border: 1px solid #4ea78a;
 }
 
 .table-btn.expenses button {
   background-color: #08a6e4;
   padding: 5px 10px;
-  border: none;
+  border: 1px solid transparent;
+  outline: none;
   color: white;
   font-weight: bold;
   -webkit-transition: 0.3s;
@@ -276,6 +319,10 @@ textarea:focus {
   background-color: #0184b8;
   -webkit-box-shadow: 0px 4px 7px 2px #00000030;
           box-shadow: 0px 4px 7px 2px #00000030;
+}
+
+.table-btn.expenses button:focus {
+  border: 1px solid #0184b8;
 }
 
 .table.earnings .budgetBtn {
@@ -313,5 +360,46 @@ textarea:focus {
   padding: 5px 10px;
   color: white;
   font-weight: bold;
+}
+
+.editFormBtn {
+  background-color: #747474;
+  color: white;
+  font-family: "Lato", sans-serif;
+  border: 1px solid transparent;
+  padding: 10px 15px;
+  font-weight: bold;
+  border-radius: 5px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  outline: none;
+}
+
+.editFormBtn:hover {
+  background-color: #171920;
+  -webkit-box-shadow: 0px 4px 7px 2px #00000030;
+          box-shadow: 0px 4px 7px 2px #00000030;
+}
+
+.editFormBtn:focus {
+  border: 1px solid #08a6e4;
+}
+
+.addTransaction {
+  width: 150px;
+  padding: 5px 10px;
+}
+
+.delete-transaction {
+  position: absolute;
+  left: -35px;
+}
+
+.transaction-title {
+  margin: 100px 0 15px 0;
+}
+
+.transaction-subtitle {
+  margin-bottom: 15px;
 }
 /*# sourceMappingURL=main.css.map */

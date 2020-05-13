@@ -8,6 +8,7 @@
   }
 }
 .budget-month {
+  margin: 50px 0;
   text-align: center;
   font-size: 22px;
   font-family: $main-font;
@@ -20,9 +21,16 @@
 
   select {
     padding-left: 3px;
+    border-top: 1px solid transparent;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    border-bottom: 1px solid black;
     width: auto;
-    outline: $secondary-color-dark;
+    outline: none;
     // font-size: inherit;
     background-color: white;
+    &:focus {
+      border: 1px solid $secondary-color;
+    }
   }
 }

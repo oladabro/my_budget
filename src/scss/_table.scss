@@ -2,7 +2,7 @@
 
 .table {
   max-width: 1000px;
-  margin: 0 auto;
+  margin: 50px auto;
   display: grid;
   grid-row-start: 2;
   grid-row-end: 3;
@@ -13,6 +13,7 @@
 .table-name {
   grid-column-start: 1;
   grid-column-end: 2;
+  margin-bottom: 15px;
 }
 
 .table-btn {
@@ -91,15 +92,7 @@
   border-top: 1px solid $grid-color;
   border-bottom: 1px solid $grid-color;
   outline: none;
-  // border-bottom: 1px solid f7f7f7;
   font-family: "Lato", sans-serif;
-
-  // letter-spacing: 0.5px;
-}
-.table-row-cell::before {
-  content: "";
-  display: inline-block;
-  border: 1px solid #999;
 }
 
 .table-row-cell.special {
@@ -120,12 +113,12 @@
 }
 
 .earnings input:focus,
-textarea:focus {
+.earnings textarea:focus {
   border: 1px solid $primary-color;
 }
 
 .expenses input:focus,
-textarea:focus {
+.expenses textarea:focus {
   border: 1px solid $secondary-color;
 }
 
@@ -139,4 +132,22 @@ textarea:focus {
 
 .table-row-cell.empty {
   background-color: white;
+}
+
+//transactions
+
+.table-transactions {
+  display: grid;
+  grid-template-columns: 15% 20% 20% 25%;
+  grid-template-rows: 50px;
+  input {
+    padding: 10px 0;
+  }
+}
+
+.table-transactions-row {
+  display: grid;
+  grid-template-columns: 15% 20% 20% 25%;
+  grid-template-rows: auto;
+  position: relative;
 }

@@ -79,7 +79,7 @@ const Summary = () => {
           readOnly
         />
       </div>
-      <div className="table-row">
+      <div className="table-row tooltips">
         <input
           id="1"
           value="Do zaalokowania"
@@ -94,11 +94,11 @@ const Summary = () => {
           className="table-row-cell"
         />
         <input readOnly className="table-row-cell empty" />
-        <p id="tooltip1" className="hide">
-          Różnica między przychodami a planowanymi wydatkami. Jeśli jest
-          mniejsza od zera to znaczy że jest potencjał by zaoszczędzić te
-          pieniądze. Wrzuć je w kategorię oszczędzanie. Jeśli jest większa od
-          zera oznacza to że planujesz wydać więcej niż zarabiasz
+        <p id="tooltip1" className="tooltip hide">
+          Różnica między przychodami a planowanymi wydatkami. Jeśli jest większa
+          od zera to znaczy że jest potencjał by zaoszczędzić pieniądze. Wrzuć
+          je w kategorię oszczędzanie. Jeśli jest mniejsza od zera oznacza to,
+          że planujesz wydać więcej niż zarabiasz.
         </p>
       </div>
       <div className="table-row">
@@ -116,10 +116,10 @@ const Summary = () => {
           readOnly
           className="table-row-cell special"
         />
-        <p id="tooltip2" className="hide">
+        <p id="tooltip2" className="tooltip hide">
           Różnica między aktualnymi przychodami a wydatkami danego miesiąca.
-          Jeśli jest mniejsza od zera to BRAWO! Oznacza to, że wydałeś mniej niż
-          zarobiłeś. Jeśli jest większa od zera to znaczy że 'zjadłeś'
+          Jeśli jest większa od zera to BRAWO! Oznacza to, że wydałeś mniej niż
+          zarobiłeś. Jeśli jest mniejsza od zera to znaczy, że 'zjadłeś'
           oszczędności.
         </p>
       </div>
