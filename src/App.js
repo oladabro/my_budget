@@ -9,13 +9,13 @@ import TransactionsContextProvider from "./contexts/TransactionsContext";
 
 const App = () => {
   return (
-    <div >
+    <>
       <BudgetContextProvider>
         <TransactionsContextProvider>
           <AppWrapper />
         </TransactionsContextProvider>
       </BudgetContextProvider>
-    </div>
+    </>
   );
 };
 

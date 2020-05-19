@@ -234,6 +234,7 @@ const TransactionsContextProvider = (props) => {
     <TransactionsContext.Provider
       value={{
         transactions,
+        setTransactions,
         addTransaction,
         removeTransaction,
         updateTransaction,

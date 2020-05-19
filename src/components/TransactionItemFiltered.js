@@ -4,11 +4,11 @@ const TransactionItemFiltered = (props) => {
   const { transaction } = props;
 
   return (
-    <div>
-      <div>{transaction.date}</div>
-      <div>{transaction.category}</div>
-      <div>{transaction.amount}</div>
-      <div>{transaction.comment}</div>
+    <div className="table-transaction-row">
+      <div className="table-transaction-cell">{transaction.date}</div>
+      <div className="table-transaction-cell">{transaction.category}</div>
+      <div className="table-transaction-cell">{transaction.amount}</div>
+      <div className="table-transaction-cell">{transaction.comment}</div>
     </div>
   );
 };

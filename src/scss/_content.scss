@@ -20,17 +20,24 @@
   }
 
   select {
-    padding-left: 3px;
+    padding-left: 5px;
     border-top: 1px solid transparent;
     border-left: 1px solid transparent;
     border-right: 1px solid transparent;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid $secondary-color-dark;
     width: auto;
     outline: none;
-    // font-size: inherit;
+    font-family: inherit;
     background-color: white;
+    font-size: 22px;
+    color: $secondary-color-dark;
     &:focus {
       border: 1px solid $secondary-color;
+    }
+
+    option {
+      font-size: 13px;
+      color: black;
     }
   }
 }

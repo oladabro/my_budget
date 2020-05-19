@@ -35,6 +35,11 @@ const Budget = () => {
     saveEditFormStatus(true);
   };
 
+  const setAndsaveMonth = (month) => {
+    setMonth(month);
+    saveMonth(month);
+  };
+
   return (
     <main className="container">
       <div className="container" className="content ">
@@ -46,11 +51,12 @@ const Budget = () => {
             type="text"
             name="month"
             value={currentMonth}
-            onChange={(event) => setMonth(event.target.value)}
-            onBlur={() => saveMonth(month)}
+            // onChange={(event) => setMonth(event.target.value)}
+            // onBlur={() => saveMonth(month)}
+            onChange={(event) => setAndsaveMonth(event.target.value)}
           >
             wybierz miesiąc
-            <option>wybierz miesiąc</option>
+            <option>wybierz...</option>
             <option>STYCZEŃ</option>
             <option>LUTY</option>
             <option>MARZEC</option>
@@ -66,14 +72,22 @@ const Budget = () => {
           </select>
         </p>
         {editFormGlobal === true ? (
-          <button className="editFormBtn" onClick={saveTemplate}>Zapisz szablon</button>
+          <button className="editFormBtn" onClick={saveTemplate}>
+            Zapisz szablon
+          </button>
         ) : (
-          <button className="editFormBtn" onClick={editTemplate}>Edytuj szablon</button>
+          <button className="editFormBtn" onClick={editTemplate}>
+            Edytuj szablon
+          </button>
         )}
         <Earnings />
-        <p style={{ color: "red" }}>{error}</p>
+        <p className="errorMsg" style={{ color: "red" }}>
+          {error}
+        </p>
         <Expenses />
-        <p style={{ color: "red" }}>{error}</p>
+        <p className="errorMsg" style={{ color: "red" }}>
+          {error}
+        </p>
         <Summary />
       </div>
     </main>

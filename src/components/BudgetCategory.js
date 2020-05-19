@@ -39,7 +39,7 @@ const BudgetCategory = ({ earning }) => {
         className={editFormGlobal === true ? "budgetBtn" : "budgetBtn hide"}
         onClick={() => removeBudgetCategory(id)}
       >
-        usuń
+        <i class="far fa-trash-alt"></i>
       </button>
       <input
         id={id}

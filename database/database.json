@@ -1,186 +1,81 @@
 {
   "transactions": [
     {
-      "date": "2020-05-26",
-      "category": "ubrania",
-      "amount": "-300",
-      "comment": "buty mama",
-      "id": 2
-    },
-    {
-      "date": "2020-05-25",
-      "category": "przedszkole",
+      "date": "2020-05-14",
+      "category": "czynsz",
       "amount": "-350",
       "comment": "",
       "id": 3
     },
     {
-      "date": "2020-05-06",
+      "date": "2020-05-14",
       "category": "pensja",
-      "amount": "1000",
-      "comment": "lidl",
+      "amount": "5000",
+      "comment": "",
       "id": 4
     },
     {
-      "date": "2020-05-03",
-      "category": "żłobek",
-      "amount": "-200",
-      "comment": "",
-      "id": 5
-    },
-    {
-      "date": "2020-05-10",
+      "date": "2020-05-14",
       "category": "żywność",
       "amount": "-350",
-      "comment": "",
+      "comment": "lidl",
       "id": 6
     },
     {
       "date": "2020-05-05",
       "category": "auto",
-      "amount": "-200",
+      "amount": "-201",
       "comment": "paliwo",
       "id": 7
     },
     {
-      "date": "",
-      "category": "",
-      "amount": "",
-      "comment": "",
+      "date": "2020-05-07",
+      "category": "żywność",
+      "amount": "-117",
+      "comment": "Kaufland",
       "id": 8
     },
     {
-      "date": "",
-      "category": "",
-      "amount": "",
-      "comment": "",
+      "date": "2020-05-12",
+      "category": "auto",
+      "amount": "-180",
+      "comment": "paliwo",
       "id": 9
     },
     {
-      "date": "",
-      "category": "",
-      "amount": "",
-      "comment": "",
+      "date": "2020-05-12",
+      "category": "auto",
+      "amount": "-1000",
+      "comment": "naprawa chłodnicy",
       "id": 10
     },
     {
-      "date": "",
-      "category": "",
-      "amount": "",
+      "date": "2020-05-14",
+      "category": "500plus",
+      "amount": "500",
       "comment": "",
       "id": 11
     },
     {
-      "date": "",
-      "category": "",
-      "amount": "",
+      "date": "2020-05-05",
+      "category": "żłobek",
+      "amount": "-900",
       "comment": "",
       "id": 12
     },
     {
-      "date": "",
-      "category": "",
-      "amount": "",
+      "date": "2020-05-13",
+      "category": "żywność",
+      "amount": "-117",
       "comment": "",
       "id": 13
-    },
-    {
-      "date": "",
-      "category": "",
-      "amount": "",
-      "comment": "",
-      "id": 14
-    },
-    {
-      "date": "",
-      "category": "",
-      "amount": "",
-      "comment": "",
-      "id": 15
-    },
-    {
-      "date": "",
-      "category": "",
-      "amount": "",
-      "comment": "",
-      "id": 16
-    },
-    {
-      "date": "",
-      "category": "",
-      "amount": "",
-      "comment": "",
-      "id": 17
-    },
-    {
-      "date": "",
-      "category": "",
-      "amount": "",
-      "comment": "",
-      "id": 18
-    },
-    {
-      "date": "",
-      "category": "",
-      "amount": "",
-      "comment": "",
-      "id": 19
-    },
-    {
-      "date": "",
-      "category": "",
-      "amount": "",
-      "comment": "",
-      "id": 20
-    },
-    {
-      "date": "",
-      "category": "",
-      "amount": "",
-      "comment": "",
-      "id": 21
-    },
-    {
-      "date": "",
-      "category": "",
-      "amount": "",
-      "comment": "",
-      "id": 22
-    },
-    {
-      "date": "",
-      "category": "",
-      "amount": "",
-      "comment": "",
-      "id": 23
-    },
-    {
-      "date": "",
-      "category": "",
-      "amount": "",
-      "comment": "",
-      "id": 24
-    },
-    {
-      "date": "",
-      "category": "",
-      "amount": "",
-      "comment": "",
-      "id": 25
-    },
-    {
-      "date": "",
-      "category": "",
-      "amount": "",
-      "comment": "",
-      "id": 26
     }
   ],
   "earnings": [
     {
       "category": "pensja",
       "budget": "5000",
-      "actual": 1000,
+      "actual": 5000,
       "variance": "",
       "id": "ba65b700-9489-11ea-b5e0-dfa9e87bf910",
       "comment": ""
@@ -188,7 +83,7 @@
     {
       "category": "500plus",
       "budget": "500",
-      "actual": 0,
+      "actual": 500,
       "variance": "",
       "id": "c1f24050-9507-11ea-b209-3bd71259cc7b",
       "comment": ""
@@ -196,92 +91,76 @@
   ],
   "expenses": [
     {
-      "category": "przyjemnosci",
-      "budget": "-500",
-      "actual": 0,
-      "variance": 0,
-      "id": "8276b2b0-8b90-11ea-a73e-a352cec567c2",
-      "comment": ""
-    },
-    {
       "category": "żywność",
       "budget": "-1000",
-      "actual": -350,
-      "variance": 0,
-      "id": "82c87c30-8b90-11ea-a73e-a352cec567c2",
+      "actual": -584,
+      "variance": "",
+      "id": "83291aa0-9684-11ea-85c0-1b833f74a43f",
       "comment": ""
     },
     {
       "category": "czynsz",
-      "budget": "-200",
+      "budget": "-350",
+      "actual": -350,
+      "variance": "",
+      "id": "89792990-9684-11ea-85c0-1b833f74a43f",
+      "comment": ""
+    },
+    {
+      "category": "media",
+      "budget": "-300",
       "actual": 0,
       "variance": "",
-      "id": "c43e1950-8c39-11ea-abd5-c706f0fefd83",
-      "comment": "płatne do 4 m-ca"
+      "id": "8ab94ab0-9684-11ea-85c0-1b833f74a43f",
+      "comment": ""
+    },
+    {
+      "category": "telefon",
+      "budget": "-100",
+      "actual": 0,
+      "variance": "",
+      "id": "8fdb8800-9684-11ea-85c0-1b833f74a43f",
+      "comment": ""
     },
     {
       "category": "przedszkole",
       "budget": "-600",
-      "actual": -350,
+      "actual": 0,
       "variance": "",
-      "id": "c4936540-8c39-11ea-abd5-c706f0fefd83",
+      "id": "9efa3a70-9684-11ea-85c0-1b833f74a43f",
       "comment": ""
     },
     {
       "category": "żłobek",
       "budget": "-900",
-      "actual": -200,
+      "actual": -900,
       "variance": "",
-      "id": "ce9b9a30-8c39-11ea-abd5-c706f0fefd83",
+      "id": "a5916480-9684-11ea-85c0-1b833f74a43f",
       "comment": ""
     },
     {
-      "category": "t-mobile",
-      "budget": "-100",
-      "actual": 0,
+      "category": "auto",
+      "budget": "-1200",
+      "actual": -1381,
       "variance": "",
-      "id": "d476c740-8c39-11ea-abd5-c706f0fefd83",
-      "comment": "płatne do 15 m-ca"
+      "id": "ab235390-9684-11ea-85c0-1b833f74a43f",
+      "comment": "paliwo, przegląd"
     },
     {
-      "category": "ubrania",
-      "budget": "-500",
-      "actual": -300,
+      "category": "oszczędzanie",
+      "budget": "-750",
+      "actual": 0,
       "variance": "",
-      "id": "0a0b1900-8c3b-11ea-abd5-c706f0fefd83",
+      "id": "b5f36c60-9684-11ea-85c0-1b833f74a43f",
       "comment": ""
-    },
-    {
-      "category": "media",
-      "budget": "-200",
-      "actual": 0,
-      "variance": "",
-      "id": "b1e1d5d0-8c3e-11ea-abd5-c706f0fefd83",
-      "comment": "płatne do 3 miesiąca"
     },
     {
       "category": "ubrania dzieci",
       "budget": "-300",
       "actual": 0,
       "variance": "",
-      "id": "15fee0e0-8fd6-11ea-8144-75a1137e6e0f",
-      "comment": "buty Szymka, piżama,\nkurtka zimowa,\nokulary"
-    },
-    {
-      "category": "oszczędzanie",
-      "budget": "-1000",
-      "actual": 0,
-      "variance": "",
-      "id": "1f9454b0-9174-11ea-8b96-ad597612cf5b",
-      "comment": ""
-    },
-    {
-      "category": "auto",
-      "budget": "-200",
-      "actual": -200,
-      "variance": "",
-      "id": "042d5fc0-9492-11ea-94a3-2f18f7cd0d92",
-      "comment": "paliwo"
+      "id": "ecec4ca0-9684-11ea-85c0-1b833f74a43f",
+      "comment": "kurtka, buty"
     }
   ],
   "month": {

@@ -52,28 +52,6 @@ class TransactionItem extends Component {
   handleOnChange = (e) => {
     const { name, value } = e.target;
     const { category } = this.state;
-    // if (value !== category && category == "") {
-    //   console.log(
-    //     `stary state ${this.state.category}, nowa kategoria: ${e.target.value}`
-    //   );
-    //   this.setState({
-    //     [name]: value,
-    //   });
-    // } else if (value !== category && category !== "") {
-    //   console.log("musze się przeliczyć");
-    //   console.log(
-    //     `stary state ${this.state.category}, nowa kategoria: ${e.target.value}`
-    //   );
-
-    //   this.props.updateActualForCategory(category, this.state.amount);
-
-    //   this.setState({
-    //     [name]: value,
-    //   });
-    //   console.log(this.props.transactions);
-    //   // this.props.evaluateActuals(category, this.state.amount);
-    // }
-
     this.setState({
       [name]: value,
     });
@@ -83,38 +61,36 @@ class TransactionItem extends Component {
     const { id, date, category, amount, comment } = this.state;
     const { categoryList } = this.props;
 
-    const {
-      updateTransaction,
-      removeTransaction,
-      // evaluateActuals,
-    } = this.props;
-
-    // const fireActions = (id, category) => {
-    //   removeTransaction(id, category);
-    //   // evaluateActuals(category);
-    // };
+    const { updateTransaction, removeTransaction } = this.props;
 
     return (
-      <div id={id} onBlur={() => updateTransaction(this.state)}>
+      <div
+        id={id}
+        onBlur={() => updateTransaction(this.state)}
+        className="table-transaction-row"
+      >
         <button
           id={id}
           onClick={() => removeTransaction(id, category)}
-          className="delete-transaction"
+          // className="delete-transaction"
+          className="budgetBtn transaction"
         >
-          -
+          <i className="far fa-trash-alt"></i>
         </button>
         <input
+          id="date"
           type="date"
           name="date"
           value={date}
           onChange={this.handleOnChange}
+          className="table-transaction-cell"
         />
         <select
           type="text"
           name="category"
           value={category}
           onChange={this.handleOnChange}
-          // onFocus={this.handleClick}
+          className="table-transaction-cell"
         >
           <option>wybierz kategorie</option>
           {categoryList.map((category) => {
@@ -128,17 +104,16 @@ class TransactionItem extends Component {
           name="amount"
           value={amount}
           onChange={this.handleOnChange}
-          // onBlur={() => evaluateActuals(category)}
+          className="table-transaction-cell"
         />
-        <input
+        <textarea
+          rows="1"
           type="text"
           name="comment"
           value={comment}
           onChange={this.handleOnChange}
+          className="table-transaction-cell comment"
         />
-        {/* <button id={id} onClick={() => evaluateActuals(category)}>
-          save
-        </button> */}
       </div>
     );
   }

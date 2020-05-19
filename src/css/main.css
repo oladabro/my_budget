@@ -1,8 +1,9 @@
 nav {
   position: fixed;
+  top: 0;
   background-color: white;
-  width: 100%;
-  z-index: 1;
+  width: 100vw;
+  z-index: 2;
   -webkit-box-shadow: 0px 3px 6px #00000029;
           box-shadow: 0px 3px 6px #00000029;
 }
@@ -75,18 +76,26 @@ nav ul a:hover {
 }
 
 .budget-month select {
-  padding-left: 3px;
+  padding-left: 5px;
   border-top: 1px solid transparent;
   border-left: 1px solid transparent;
   border-right: 1px solid transparent;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #0184b8;
   width: auto;
   outline: none;
+  font-family: inherit;
   background-color: white;
+  font-size: 22px;
+  color: #0184b8;
 }
 
 .budget-month select:focus {
   border: 1px solid #08a6e4;
+}
+
+.budget-month select option {
+  font-size: 13px;
+  color: black;
 }
 
 .table {
@@ -111,22 +120,11 @@ nav ul a:hover {
   margin-bottom: 15px;
 }
 
-.table-btn {
-  /* grid-column-start: 2;
-    grid-column-end: 3;
-    align-self: center;
-    padding-left: 20px; */
-  position: absolute;
-  left: 110px;
-  top: 18px;
-  /* left: 235px; */
-}
-
 .table-header {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 20% 20% 20% 20% 20%;
-      grid-template-columns: 20% 20% 20% 20% 20%;
+  -ms-grid-columns: 25% 17% 17% 16% 25%;
+      grid-template-columns: 25% 17% 17% 16% 25%;
   -ms-grid-rows: 50px;
       grid-template-rows: 50px;
   -ms-grid-column: 1;
@@ -172,8 +170,8 @@ nav ul a:hover {
 .table-row {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 20% 20% 20% 20% 20%;
-      grid-template-columns: 20% 20% 20% 20% 20%;
+  -ms-grid-columns: 25% 17% 17% 16% 25%;
+      grid-template-columns: 25% 17% 17% 16% 25%;
   -ms-grid-rows: auto;
       grid-template-rows: auto;
   -ms-grid-column: 1;
@@ -203,6 +201,7 @@ nav ul a:hover {
   border-bottom: 1px solid #e8e9ed;
   outline: none;
   font-family: "Lato", sans-serif;
+  font-size: 14px;
 }
 
 .table-row-cell.special {
@@ -215,7 +214,7 @@ nav ul a:hover {
 
 .table-row-cell.comment {
   text-align: left;
-  padding-left: 7px;
+  padding: 5px 10px;
   resize: none;
   overflow: auto;
   height: auto;
@@ -245,27 +244,92 @@ nav ul a:hover {
   background-color: white;
 }
 
-.table-transactions {
+.table-transactions-header {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 15% 20% 20% 25%;
       grid-template-columns: 15% 20% 20% 25%;
   -ms-grid-rows: 50px;
       grid-template-rows: 50px;
+  margin-top: 20px;
 }
 
-.table-transactions input {
+.table-transactions-header input,
+.table-transactions-header select,
+.table-transactions-header option {
   padding: 10px 0;
+  text-align: center;
+  background-color: #08a6e4;
+  color: white;
+  font-family: "Lato", sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
 }
 
-.table-transactions-row {
+.table-transactions-header select {
+  padding-left: 15px;
+}
+
+.table-transaction-row {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 15% 20% 20% 25%;
       grid-template-columns: 15% 20% 20% 25%;
   -ms-grid-rows: auto;
       grid-template-rows: auto;
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 5;
   position: relative;
+}
+
+.table-transaction-cell {
+  text-align: center;
+  padding: 10px 0;
+  border-left: none;
+  border-right: none;
+  border-top: 1px solid #e8e9ed;
+  border-bottom: 1px solid #e8e9ed;
+  outline: none;
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+}
+
+.table-transaction-cell.comment {
+  text-align: left;
+  padding-left: 10px;
+  resize: none;
+  overflow: auto;
+  font-family: "Lato", sans-serif;
+}
+
+input[type="date"] {
+  font-size: 14px;
+  padding: 0;
+}
+
+/* Removes the clear button from date inputs */
+input[type="date"]::-webkit-clear-button {
+  display: none;
+}
+
+/* Removes the spin button */
+input[type="date"]::-webkit-inner-spin-button {
+  display: none;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  color: #0184b8;
+}
+
+select.table-transaction-cell {
+  padding-left: 15px;
+  background-color: #e0dddd;
+}
+
+select.table-transaction-cell::-ms-expand {
+  color: #0184b8;
 }
 
 .tooltip {
@@ -281,6 +345,11 @@ nav ul a:hover {
 
 .table-row.tooltips {
   position: relative;
+}
+
+.table-btn {
+  position: absolute;
+  left: 110px;
 }
 
 .table-btn.earnings button {
@@ -351,8 +420,8 @@ nav ul a:hover {
 
 .budgetBtn {
   position: absolute;
-  top: 22%;
-  left: -60px;
+  top: 15px;
+  left: -45px;
   width: auto;
   height: auto;
   border-radius: 4px;
@@ -362,7 +431,8 @@ nav ul a:hover {
   font-weight: bold;
 }
 
-.editFormBtn {
+.editFormBtn,
+.addTransaction {
   background-color: #747474;
   color: white;
   font-family: "Lato", sans-serif;
@@ -375,31 +445,52 @@ nav ul a:hover {
   outline: none;
 }
 
-.editFormBtn:hover {
+.editFormBtn:hover,
+.addTransaction:hover {
   background-color: #171920;
   -webkit-box-shadow: 0px 4px 7px 2px #00000030;
           box-shadow: 0px 4px 7px 2px #00000030;
 }
 
-.editFormBtn:focus {
+.editFormBtn:focus,
+.addTransaction:focus {
   border: 1px solid #08a6e4;
 }
 
-.addTransaction {
-  width: 150px;
-  padding: 5px 10px;
+.budgetBtn.transaction {
+  background-color: #08a6e4;
+  top: 15px;
+  left: 820px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
-.delete-transaction {
-  position: absolute;
-  left: -35px;
+.budgetBtn.transaction:hover {
+  background-color: #0184b8;
+  -webkit-box-shadow: 0px 4px 7px 2px #00000030;
+          box-shadow: 0px 4px 7px 2px #00000030;
+}
+
+header {
+  width: 100vw;
+  background-color: white;
+  position: fixed;
+  z-index: 1;
+  top: 30px;
+  padding-bottom: 10px;
 }
 
 .transaction-title {
-  margin: 100px 0 15px 0;
+  padding: 50px 0 15px 0;
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 3;
 }
 
 .transaction-subtitle {
   margin-bottom: 15px;
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 3;
 }
 /*# sourceMappingURL=main.css.map */

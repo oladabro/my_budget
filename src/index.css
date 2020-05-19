@@ -12,8 +12,14 @@ body {
   width: 1000px;
   margin: 0 auto;
   position: relative;
-  display: grid;
+  /* display: grid; */
 }
 .hide {
   display: none;
+}
+
+.container.transactions {
+  margin-top: 185px;
+  margin-bottom: 100px;
+  background-color: white;
 }
